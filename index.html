@@ -1,0 +1,27 @@
+<!doctype html><html lang="es"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>PlayCanvas - Escala, profundidad y orientación</title>
+<script src="https://cdn.jsdelivr.net/npm/playcanvas@2.22.4/build/playcanvas.js"></script>
+<style>
+*{box-sizing:border-box}html,body{margin:0;width:100%;height:100%;overflow:hidden;font-family:Arial,sans-serif;background:#0a1020}
+#application-canvas{position:fixed;inset:0;width:100%;height:100%;display:block}
+#ui{position:fixed;z-index:10;left:12px;right:12px;top:12px;max-width:560px;margin:auto;background:rgba(10,17,32,.90);color:#fff;border:1px solid #3f536f;border-radius:14px;padding:12px}
+h1{font-size:18px;margin:0 0 8px}p{font-size:13px;margin:6px 0;color:#c3cede}
+.row{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px}.group{margin-top:10px}
+button,select{min-height:42px;border-radius:9px;border:1px solid #526886;background:#1d2a44;color:#fff;padding:8px 10px;font-size:14px}
+button{cursor:pointer}button.active{background:#65d6ff;color:#071018}.status{margin-top:8px;font-size:12px;color:#a8dbef}
+#tip{position:fixed;z-index:9;left:12px;right:12px;bottom:12px;max-width:560px;margin:auto;background:rgba(0,0,0,.72);color:#fff;padding:10px;border-radius:10px;font-size:12px}
+</style></head><body>
+<canvas id="application-canvas"></canvas>
+<div id="ui"><h1>PlayCanvas - Fundamentos del diseño VR/AR</h1>
+<p>Modifica escala, profundidad y orientación del router. Observa cómo cambia legibilidad, referencia espacial y confort.</p>
+<div class="group"><b>Escala</b><div class="row">
+<button data-scale="0.035">Pequeña</button><button class="active" data-scale="0.07">Realista</button><button data-scale="0.18">Exagerada</button></div></div>
+<div class="group"><b>Profundidad</b><div class="row">
+<button data-z="-0.7">Muy cerca</button><button class="active" data-z="-2.2">Cómoda</button><button data-z="-6">Lejana</button></div></div>
+<div class="group"><b>Orientación del panel</b><div class="row">
+<button class="active" data-pos="center">Centro</button><button data-pos="side">Lateral</button><button data-pos="high">Arriba</button></div></div>
+<div class="group"><b>Modo de confort</b><div class="row"><button id="comfort">Aplicar configuración cómoda</button><button id="motion">Simular movimiento brusco</button></div></div>
+<div id="status" class="status">Cargando router.glb...</div></div>
+<div id="tip">Consejo: una escena más espectacular no siempre es más cómoda. Busca una escala coherente, distancia legible y controles dentro de una zona visual accesible.</div>
+<script src="./app.js"></script></body></html>
